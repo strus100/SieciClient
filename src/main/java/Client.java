@@ -10,12 +10,16 @@ public class Client {
          //Tworzenie socketu
          Socket clientSocket = new Socket("localhost", 3333);
 
+
         //Komunikacja od servera
         BufferedReader inFromServer = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
         //Komunikacja do servera
         DataOutputStream outToServer = new DataOutputStream(clientSocket.getOutputStream());
         //Wpisz z klawy testy...
         BufferedReader inFromUser = new BufferedReader(new InputStreamReader(System.in));
+
+        recvfrom = inFromServer.readLine();
+        System.out.println("FROM SERVER: " + recvfrom);
 
         System.out.println("Podaj login: ");
         sendto = inFromUser.readLine();
