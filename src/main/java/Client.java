@@ -17,7 +17,7 @@ public class Client {
         DataOutputStream outToServer = new DataOutputStream(clientSocket.getOutputStream());
         //Wpisz z klawy testy...
         BufferedReader inFromUser = new BufferedReader(new InputStreamReader(System.in));
-
+/*
         recvfrom = inFromServer.readLine();
         System.out.println("FROM SERVER: " + recvfrom);
 
@@ -28,9 +28,17 @@ public class Client {
         recvfrom = inFromServer.readLine();
         System.out.println("FROM SERVER: " + recvfrom);
 
+        recvfrom = inFromServer.readLine();
+        System.out.println("FROM SERVER: " + recvfrom);*/
+
 
         while (true){
-             System.out.println("Wpisz coś: ");
+
+
+            recvfrom = inFromServer.readLine();
+            System.out.println("FROM SERVER: " + recvfrom);
+
+            System.out.println("Wpisz coś: ");
              sendto = inFromUser.readLine();
              outToServer.writeBytes(sendto + '\n');
 
