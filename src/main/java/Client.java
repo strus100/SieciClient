@@ -8,7 +8,7 @@ public class Client {
 
         System.out.println("Czekam na rozpoczęcie gry..");
          //Tworzenie socketu
-         Socket clientSocket = new Socket("localhost", 3333);
+         Socket clientSocket = new Socket("192.168.100.29", 3333);
 
 
         //Komunikacja od servera
@@ -17,7 +17,7 @@ public class Client {
         DataOutputStream outToServer = new DataOutputStream(clientSocket.getOutputStream());
         //Wpisz z klawy testy...
         BufferedReader inFromUser = new BufferedReader(new InputStreamReader(System.in));
-/*
+
         recvfrom = inFromServer.readLine();
         System.out.println("FROM SERVER: " + recvfrom);
 
@@ -28,9 +28,11 @@ public class Client {
         recvfrom = inFromServer.readLine();
         System.out.println("FROM SERVER: " + recvfrom);
 
-        recvfrom = inFromServer.readLine();
-        System.out.println("FROM SERVER: " + recvfrom);*/
+        for (int i = 0; i < 25 ; i++) {
+            recvfrom = inFromServer.readLine();
+            System.out.println("FROM SERVER: " + recvfrom);
 
+        }
 
         while (true){
 
