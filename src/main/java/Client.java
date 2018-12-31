@@ -8,7 +8,7 @@ public class Client {
 
         System.out.println("Czekam na rozpoczęcie gry..");
          //Tworzenie socketu
-         Socket clientSocket = new Socket("192.168.100.29", 3333);
+         Socket clientSocket = new Socket("localhost", 3333);
 
 
         //Komunikacja od servera
