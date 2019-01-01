@@ -1,5 +1,8 @@
 import java.io.*;
 import java.net.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.StringTokenizer;
 
 public class Client {
     public static void main(String argv[]) throws Exception {
@@ -25,29 +28,46 @@ public class Client {
         sendto = inFromUser.readLine();
         outToServer.writeBytes("LOGIN " + sendto +'\n');
 
-        recvfrom = inFromServer.readLine();
-        System.out.println("FROM SERVER: " + recvfrom);
 
-        for (int i = 0; i < 25 ; i++) {
+        for (int i = 0; i < 29 ; i++) {
             recvfrom = inFromServer.readLine();
             System.out.println("FROM SERVER: " + recvfrom);
 
         }
 
+
+        //KONIEC STARTU
+
+
+        List list = new ArrayList<String>();
         while (true){
-
-
-            recvfrom = inFromServer.readLine();
-            System.out.println("FROM SERVER: " + recvfrom);
 
             System.out.println("Wpisz coś: ");
              sendto = inFromUser.readLine();
              outToServer.writeBytes(sendto + '\n');
 
-             recvfrom = inFromServer.readLine();
-             System.out.println("FROM SERVER: " + recvfrom);
-         }
+
+
+                recvfrom = inFromServer.readLine();
+                System.out.println("FROM SERVER: " + recvfrom);
+
+                recvfrom = inFromServer.readLine();
+                System.out.println("FROM SERVER: " + recvfrom);
+
+            if(sendto.equalsIgnoreCase( "PASS")) {
+
+                for (int i = 0; i < 26; i++) {
+                    recvfrom = inFromServer.readLine();
+                    System.out.println("FROM SERVER: " + recvfrom);
+
+                }
+
+
+        }
+
+
      }
+}
 }
 
 
